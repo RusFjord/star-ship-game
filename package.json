@@ -1,0 +1,25 @@
+{
+    "name": "star-ship-game",
+    "version": "1.0.0",
+    "description": "Игра Star Ship на движке Phaser 3.",
+    "main": "src/game.ts",
+    "scripts": {
+        "dev": "rollup --config rollup.config.dev.js",
+        "build": "rollup --config rollup.config.dist.js",
+        "watch": "rollup --watch --config rollup.config.dev.js"
+    },
+    "author": "Fedor Endovitskiy <f.endovitskiy@ulteam8.ru> (https://ulteam8.ru)",
+    "license": "GPL-3.0",
+    "dependencies": {},
+    "devDependencies": {
+        "@rollup/plugin-replace": "^2.3.0",
+        "phaser": "^3.22.0",
+        "rollup": "^1.29.0",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-serve": "^1.0.1",
+        "rollup-plugin-typescript2": "^0.25.3",
+        "rollup-plugin-uglify": "^6.0.4",
+        "typescript": "^3.7.4"
+    }
+}
