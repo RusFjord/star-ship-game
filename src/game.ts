@@ -1,29 +1,9 @@
 import 'phaser';
 
-export default class StarShipGame extends Phaser.Scene
-{
-
-    name: string = 'my-game'
-
-    constructor()
-    {
-        super(name);
-    }
-
-    preload(){
-    }
-
-    create(){
-        
-    }
-
-    update() {
-
-    }
-}
+import StarShipGame from './StarShipGame';
 
 const config = {
-    type: Phaser.AUTO,
+    type: Phaser.CANVAS,
     backgroundColor: '#125555',
     width: 1024,
     height: 768,
