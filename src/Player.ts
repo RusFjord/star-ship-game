@@ -1,6 +1,8 @@
 import 'phaser'
+import PlayerShots from './PlayerShots';
 
 const padding: number = 30;
+const playerShotName: string = 'player-shot';
 
 export default class Player {
 
@@ -8,15 +10,18 @@ export default class Player {
     private sprite: Phaser.GameObjects.Sprite;
     private speed: number;
     private coord: Phaser.Math.Vector2;
+    private shots: PlayerShots;
 
     constructor(scene: Phaser.Scene) {
         this.scene = scene;
         this.speed = 3;
         this.coord = new Phaser.Math.Vector2(150, 150);
+        this.shots = new PlayerShots();
     }
 
     preload() {
         this.scene.load.image('player', 'assets/star-ship.png');
+        this.scene.load.image(playerShotName, 'assets/laser-shot.png');
     }
 
     create() {
@@ -40,6 +45,13 @@ export default class Player {
         }
         this.testPosition();
         this.setPosition();
+
+        if (cursorKeys.space.isDown) {
+            let shotCoord = new Phaser.Math.Vector2(this.coord.x, this.coord.y - 50);
+            this.shots.add(this.scene, playerShotName, shotCoord);
+        }
+
+        this.shots.update();
     }
 
     private testPosition() {
